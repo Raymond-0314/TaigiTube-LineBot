@@ -1,6 +1,6 @@
 line-bot-sdk
 flask
 google-generativeai
-request
+requests
 json
 random
