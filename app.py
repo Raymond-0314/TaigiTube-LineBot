@@ -107,7 +107,7 @@ def handle_message(event):
                 CarouselColumn(
                     thumbnail_image_url = d[3],
                     title = d[0],
-                    text = d[1],
+                    text = d[1][:60],
                     actions=[
                         URIAction(label = '「' + d[0] + '」的「' + event.message.text + '」怎麼講', uri = d[2])
                     ]
