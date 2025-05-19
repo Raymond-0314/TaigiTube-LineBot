@@ -1,5 +1,5 @@
 ### 安裝函式庫 ###
-from os
+import os
 from flask import Flask, request, abort
 
 from linebot.v3 import WebhookHandler
