@@ -113,10 +113,14 @@ def handle_message(event):
                     ]
                 )
             )
-        reply = TemplateMessage(
-            alt_text = '「' + event.message.text + '」怎麼講',
-            template = CarouselTemplate(columns = template_list)
-        )
+        
+        if len(template_list) == 0:
+           reply = TextMessage(text='未查詢到資料')
+        else:
+            reply = TemplateMessage(
+                alt_text = '「' + event.message.text + '」怎麼講',
+                template = CarouselTemplate(columns = template_list)
+            )
         
 
         line_bot_api.reply_message(
