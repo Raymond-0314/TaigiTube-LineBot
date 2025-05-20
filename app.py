@@ -48,7 +48,9 @@ def crawler(search_word):
       "t": "0"          # 通常是影片時間篩選參數
   }
 
-  response = requests.post(url, headers=headers, json=payload).json()
+  response = requests.post(url, headers=headers, json=payload)
+  if response != None:
+    response = requests.post(url, headers=headers, json=payload).json()
 
   reply = []
   # 如果 response 超過10個就隨機取出10個 (LineBot templete 最多只能10個)
